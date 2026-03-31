@@ -1,0 +1,23 @@
+extends Control
+
+@onready var sub_viewport_container1: SubViewportContainer = $HBoxContainer/SubViewportContainer1
+@onready var sub_viewport1: SubViewport = $HBoxContainer/SubViewportContainer1/SubViewport1
+@onready var sub_viewport2: SubViewport = $HBoxContainer/SubViewportContainer2/SubViewport2
+@onready var viewport_size_label1: Label = $CanvasLayer/ViewportSizeLabel1
+@onready var viewport_size_label2: Label = $CanvasLayer/ViewportSizeLabel2
+
+
+func _ready() -> void:
+    pass
+
+
+func _process(_delta: float) -> void:
+    viewport_size_label1.text = "Viewport: %d×%d (stretch ×%d)" % [sub_viewport1.size.x, sub_viewport1.size.y, sub_viewport_container1.stretch_shrink]
+    viewport_size_label2.text = "Viewport: %d×%d" % [sub_viewport2.size.x, sub_viewport2.size.y]
+
+
+func _on_fullscreen_button_pressed() -> void:
+    if DisplayServer.window_get_mode() != DisplayServer.WindowMode.WINDOW_MODE_WINDOWED:
+        DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_WINDOWED)
+    else:
+        DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN)
