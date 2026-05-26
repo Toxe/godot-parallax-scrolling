@@ -22,6 +22,11 @@ func _process(_delta: float) -> void:
     camera2.position += Vector2(160, 0) * _delta
 
 
+func _unhandled_key_input(event: InputEvent) -> void:
+    if event.is_action_pressed("toggle_fullscreen"):
+        toggle_fullscreen()
+
+
 func create_window_title_update_timer() -> void:
     var timer := Timer.new()
     add_child(timer)
@@ -33,7 +38,7 @@ func update_window_title() -> void:
     get_window().title = "%s [%d FPS]" % [ProjectSettings.get_setting("application/config/name"), Performance.get_monitor(Performance.TIME_FPS)]
 
 
-func _on_fullscreen_button_pressed() -> void:
+func toggle_fullscreen() -> void:
     if DisplayServer.window_get_mode() != DisplayServer.WindowMode.WINDOW_MODE_WINDOWED:
         DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_WINDOWED)
     else:
