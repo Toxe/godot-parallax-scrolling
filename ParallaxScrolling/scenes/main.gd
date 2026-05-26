@@ -10,7 +10,8 @@ extends Control
 
 
 func _ready() -> void:
-    pass
+    create_window_title_update_timer()
+    update_window_title()
 
 
 func _process(_delta: float) -> void:
@@ -19,6 +20,17 @@ func _process(_delta: float) -> void:
 
     camera1.position += Vector2(40, 0) * _delta
     camera2.position += Vector2(160, 0) * _delta
+
+
+func create_window_title_update_timer() -> void:
+    var timer := Timer.new()
+    add_child(timer)
+    timer.timeout.connect(update_window_title)
+    timer.start(1.0)
+
+
+func update_window_title() -> void:
+    get_window().title = "%s [%d FPS]" % [ProjectSettings.get_setting("application/config/name"), Performance.get_monitor(Performance.TIME_FPS)]
 
 
 func _on_fullscreen_button_pressed() -> void:
