@@ -5,6 +5,7 @@ extends Control
 @onready var sub_viewport2: SubViewport = $HBoxContainer/SubViewportContainer2/SubViewport2
 @onready var viewport_size_label1: Label = $CanvasLayer/ViewportSizeLabel1
 @onready var viewport_size_label2: Label = $CanvasLayer/ViewportSizeLabel2
+@onready var camera2: Camera2D = $HBoxContainer/SubViewportContainer2/SubViewport2/Camera2D
 
 
 func _ready() -> void:
@@ -14,6 +15,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
     viewport_size_label1.text = "Viewport: %d×%d (stretch ×%d)" % [sub_viewport1.size.x, sub_viewport1.size.y, sub_viewport_container1.stretch_shrink]
     viewport_size_label2.text = "Viewport: %d×%d" % [sub_viewport2.size.x, sub_viewport2.size.y]
+
+    camera2.position += Vector2(300, 0) * _delta
 
 
 func _on_fullscreen_button_pressed() -> void:
