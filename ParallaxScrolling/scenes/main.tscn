@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://d2mc7eu8b23ib" path="res://assets/images/mountains3.png" id="7_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://du710aai0hve3" path="res://assets/images/ground1.png" id="8_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://bt01tklcu1ym0" path="res://assets/images/ground2.png" id="9_muem4"]
+[ext_resource type="Texture2D" uid="uid://dbqah0erqnb4v" path="res://assets/images/helo.png" id="13_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://ded1ktewo0ovq" path="res://assets/images/helo_x4.png" id="14_jkv2x"]
 
 [sub_resource type="Gradient" id="Gradient_tefeu"]
 colors = PackedColorArray(0.5477166, 0.66959137, 1, 1, 0.05507724, 0.2830962, 1, 1)
@@ -55,9 +57,6 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(156, 175)
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1" unique_id=1570935998]
-position = Vector2(78, 87)
-
 [node name="Node2D" type="Node2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1" unique_id=1943276017]
 
 [node name="Parallax2D6" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=158051884]
@@ -69,7 +68,7 @@ texture = SubResource("GradientTexture2D_eb6dy")
 centered = false
 
 [node name="Parallax2D10" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=1228180340]
-scroll_scale = Vector2(0.1, 1)
+scroll_scale = Vector2(0.1, 0.5)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D10" unique_id=1993367555]
@@ -78,7 +77,7 @@ texture = ExtResource("2_eb6dy")
 centered = false
 
 [node name="Parallax2D11" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=2030302766]
-scroll_scale = Vector2(0.2, 1)
+scroll_scale = Vector2(0.2, 0.55)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D11" unique_id=386737931]
@@ -87,7 +86,7 @@ texture = ExtResource("3_o6xl0")
 centered = false
 
 [node name="Parallax2D" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=428853874]
-scroll_scale = Vector2(0.3, 1)
+scroll_scale = Vector2(0.3, 0.6)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D" unique_id=312114191]
@@ -96,7 +95,7 @@ texture = ExtResource("4_trceg")
 centered = false
 
 [node name="Parallax2D12" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=1433709167]
-scroll_scale = Vector2(0.35, 1)
+scroll_scale = Vector2(0.35, 0.65)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D12" unique_id=1802264161]
@@ -105,7 +104,7 @@ texture = ExtResource("2_tefeu")
 centered = false
 
 [node name="Parallax2D2" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=1139246300]
-scroll_scale = Vector2(0.4, 1)
+scroll_scale = Vector2(0.4, 0.7)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D2" unique_id=1203507448]
@@ -114,7 +113,7 @@ texture = ExtResource("6_a8y0u")
 centered = false
 
 [node name="Parallax2D3" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=315999649]
-scroll_scale = Vector2(0.5, 1)
+scroll_scale = Vector2(0.5, 0.75)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D3" unique_id=2001937598]
@@ -123,7 +122,7 @@ texture = ExtResource("7_jkv2x")
 centered = false
 
 [node name="Parallax2D4" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=1179120161]
-scroll_scale = Vector2(0.6, 1)
+scroll_scale = Vector2(0.6, 0.8)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D4" unique_id=656134677]
@@ -132,7 +131,7 @@ texture = ExtResource("8_jbj1t")
 centered = false
 
 [node name="Parallax2D5" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=2004147161]
-scroll_scale = Vector2(0.7, 1)
+scroll_scale = Vector2(0.7, 0.85)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D5" unique_id=7764432]
@@ -141,7 +140,7 @@ texture = ExtResource("9_muem4")
 centered = false
 
 [node name="Parallax2D7" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=1754286665]
-scroll_scale = Vector2(0.8, 1)
+scroll_scale = Vector2(0.8, 0.9)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D7" unique_id=10392748]
@@ -150,7 +149,7 @@ texture = ExtResource("4_tipki")
 centered = false
 
 [node name="Parallax2D8" type="Parallax2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D" unique_id=1337858175]
-scroll_scale = Vector2(0.9, 1)
+scroll_scale = Vector2(0.9, 0.95)
 repeat_size = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Node2D/Parallax2D8" unique_id=1961026461]
@@ -166,6 +165,13 @@ position = Vector2(0, 92)
 texture = ExtResource("6_choun")
 centered = false
 
+[node name="Helo" type="Sprite2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1" unique_id=1450813162]
+position = Vector2(80, 80)
+texture = ExtResource("13_a8y0u")
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1/Helo" unique_id=1570935998]
+position_smoothing_enabled = true
+
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer" unique_id=1705908404]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -176,9 +182,6 @@ handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(625, 700)
 render_target_update_mode = 4
-
-[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=70248295]
-position = Vector2(315, 350)
 
 [node name="Node2D" type="Node2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=411535306]
 
@@ -191,7 +194,7 @@ texture = SubResource("GradientTexture2D_o6xl0")
 centered = false
 
 [node name="Parallax2D10" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=607016012]
-scroll_scale = Vector2(0.1, 1)
+scroll_scale = Vector2(0.1, 0.5)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D10" unique_id=453337287]
@@ -201,7 +204,7 @@ texture = ExtResource("2_eb6dy")
 centered = false
 
 [node name="Parallax2D11" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=1793438946]
-scroll_scale = Vector2(0.2, 1)
+scroll_scale = Vector2(0.2, 0.55)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D11" unique_id=607277484]
@@ -211,7 +214,7 @@ texture = ExtResource("3_o6xl0")
 centered = false
 
 [node name="Parallax2D" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=603348848]
-scroll_scale = Vector2(0.3, 1)
+scroll_scale = Vector2(0.3, 0.6)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D" unique_id=558364712]
@@ -221,7 +224,7 @@ texture = ExtResource("4_trceg")
 centered = false
 
 [node name="Parallax2D12" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=293411477]
-scroll_scale = Vector2(0.35, 1)
+scroll_scale = Vector2(0.35, 0.65)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D12" unique_id=329814356]
@@ -231,7 +234,7 @@ texture = ExtResource("2_tefeu")
 centered = false
 
 [node name="Parallax2D2" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=1196340381]
-scroll_scale = Vector2(0.4, 1)
+scroll_scale = Vector2(0.4, 0.7)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D2" unique_id=1387680487]
@@ -241,7 +244,7 @@ texture = ExtResource("6_a8y0u")
 centered = false
 
 [node name="Parallax2D3" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=1588104926]
-scroll_scale = Vector2(0.5, 1)
+scroll_scale = Vector2(0.5, 0.75)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D3" unique_id=1885505074]
@@ -251,7 +254,7 @@ texture = ExtResource("7_jkv2x")
 centered = false
 
 [node name="Parallax2D4" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=845601664]
-scroll_scale = Vector2(0.6, 1)
+scroll_scale = Vector2(0.6, 0.8)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D4" unique_id=1346270337]
@@ -261,7 +264,7 @@ texture = ExtResource("8_jbj1t")
 centered = false
 
 [node name="Parallax2D5" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=949285522]
-scroll_scale = Vector2(0.7, 1)
+scroll_scale = Vector2(0.7, 0.85)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D5" unique_id=2013597155]
@@ -271,7 +274,7 @@ texture = ExtResource("9_muem4")
 centered = false
 
 [node name="Parallax2D7" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=1517304998]
-scroll_scale = Vector2(0.8, 1)
+scroll_scale = Vector2(0.8, 0.9)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D7" unique_id=599083531]
@@ -281,7 +284,7 @@ texture = ExtResource("4_tipki")
 centered = false
 
 [node name="Parallax2D8" type="Parallax2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D" unique_id=1329456496]
-scroll_scale = Vector2(0.9, 1)
+scroll_scale = Vector2(0.9, 0.95)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Node2D/Parallax2D8" unique_id=22146045]
@@ -298,6 +301,13 @@ position = Vector2(0, 368)
 scale = Vector2(4, 4)
 texture = ExtResource("6_choun")
 centered = false
+
+[node name="Helo" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=1225854489]
+position = Vector2(320, 320)
+texture = ExtResource("14_jkv2x")
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2/Helo" unique_id=70248295]
+position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2063356290]
 

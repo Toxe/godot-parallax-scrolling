@@ -5,8 +5,8 @@ extends Control
 @onready var sub_viewport2: SubViewport = $HBoxContainer/SubViewportContainer2/SubViewport2
 @onready var viewport_size_label1: Label = $CanvasLayer/ViewportSizeLabel1
 @onready var viewport_size_label2: Label = $CanvasLayer/ViewportSizeLabel2
-@onready var camera1: Camera2D = $HBoxContainer/SubViewportContainer1/SubViewport1/Camera2D
-@onready var camera2: Camera2D = $HBoxContainer/SubViewportContainer2/SubViewport2/Camera2D
+@onready var helo1: Sprite2D = $HBoxContainer/SubViewportContainer1/SubViewport1/Helo
+@onready var helo2: Sprite2D = $HBoxContainer/SubViewportContainer2/SubViewport2/Helo
 
 
 func _ready() -> void:
@@ -14,12 +14,15 @@ func _ready() -> void:
     update_window_title()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
     viewport_size_label1.text = "Viewport: %d×%d (stretch ×%d)" % [sub_viewport1.size.x, sub_viewport1.size.y, sub_viewport_container1.stretch_shrink]
     viewport_size_label2.text = "Viewport: %d×%d" % [sub_viewport2.size.x, sub_viewport2.size.y]
 
-    camera1.position += Vector2(40, 0) * _delta
-    camera2.position += Vector2(160, 0) * _delta
+    var movement := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+    var movement_speed := 0.1 if Input.is_physical_key_pressed(Key.KEY_SHIFT) else 1.0
+
+    handle_helo_movement(helo1, movement, movement_speed * 0.25, delta)
+    handle_helo_movement(helo2, movement, movement_speed, delta)
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -27,6 +30,15 @@ func _unhandled_key_input(event: InputEvent) -> void:
         toggle_fullscreen()
     elif event.is_action_pressed("quit"):
         get_tree().quit()
+
+
+func handle_helo_movement(helo: Sprite2D, movement: Vector2, movement_speed: float, delta: float) -> void:
+    if !movement.is_zero_approx():
+        helo.position += 500.0 * delta * movement * movement_speed
+        if movement.x > 0.5 && !helo.flip_h:
+            helo.flip_h = true
+        elif movement.x < -0.5 && helo.flip_h:
+            helo.flip_h = false
 
 
 func create_window_title_update_timer() -> void:
