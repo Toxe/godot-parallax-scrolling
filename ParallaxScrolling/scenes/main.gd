@@ -25,6 +25,8 @@ func _process(_delta: float) -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
     if event.is_action_pressed("toggle_fullscreen"):
         toggle_fullscreen()
+    elif event.is_action_pressed("quit"):
+        get_tree().quit()
 
 
 func create_window_title_update_timer() -> void:
